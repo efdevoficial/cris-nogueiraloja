@@ -1,6 +1,4 @@
-**# cris-nogueiraloja
-Site profissional para o Loja Cris Nogueira | Rendas &amp; Sonhos
-**<div align="center">
+<div align="center">
 
 <img src="https://i.imgur.com/ttcoTuu.jpeg" width="180">
 
