@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin | Cris Nogueira</title>
+
+    <link rel="stylesheet" href="./css/admin.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <main class="admin-layout">
+
+        <aside class="sidebar">
+            <img src="./assets/Cris Logo.jpeg" alt="Cris Nogueira">
+
+            <h2>Admin</h2>
+            <p>Controle de estoque</p>
+
+            <nav>
+                <a href="./index.html">🏠 Ver site</a>
+                <a href="#produtos">📦 Produtos</a>
+            </nav>
+        </aside>
+
+        <section class="admin-content">
+
+            <header class="admin-header">
+                <div>
+                    <h1>Controle de Estoque</h1>
+                    <p>Cadastre, edite e gerencie os produtos da loja.</p>
+                </div>
+            </header>
+
+            <section class="dashboard-cards">
+                <article>
+                    <span>Total de produtos</span>
+                    <h2 id="totalProdutos">0</h2>
+                </article>
+
+                <article>
+                    <span>Disponíveis</span>
+                    <h2 id="produtosDisponiveis">0</h2>
+                </article>
+
+                <article>
+                    <span>Esgotados</span>
+                    <h2 id="produtosEsgotados">0</h2>
+                </article>
+            </section>
+
+            <section class="form-card" id="produtos">
+                <h2 id="formTitle">Cadastrar Produto</h2>
+
+                <form id="productForm">
+
+                    <input type="hidden" id="productId">
+
+                    <div class="form-grid">
+                        <div class="input-group">
+                            <label>Nome do produto</label>
+                            <input type="text" id="nome" required placeholder="Ex: Pijama Premium">
+                        </div>
+
+                        <div class="input-group">
+                            <label>Categoria</label>
+                            <select id="categoria" required>
+                                <option value="Lingerie">Lingerie</option>
+                                <option value="Pijama">Pijama</option>
+                                <option value="Kit">Kit</option>
+                                <option value="Novidade">Novidade</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Preço</label>
+                            <input type="text" id="preco" required placeholder="Ex: 119,90">
+                        </div>
+
+                        <div class="input-group">
+                            <label>Quantidade em estoque</label>
+                            <input type="number" id="estoque" required min="0" placeholder="Ex: 5">
+                        </div>
+
+                        <div class="input-group full">
+                            <label>Descrição</label>
+                            <textarea id="descricao" rows="4" required placeholder="Descrição do produto"></textarea>
+                        </div>
+
+                        <div class="input-group full">
+                            <label>Imagem do produto</label>
+                            <input type="text" id="imagem" placeholder="Cole o link da imagem ou deixe vazio">
+                        </div>
+
+                        <div class="input-group">
+                            <label>Status</label>
+                            <select id="status">
+                                <option value="disponivel">Disponível</option>
+                                <option value="esgotado">Esgotado</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">
+                            Salvar Produto
+                        </button>
+
+                        <button type="button" id="cancelEdit" class="btn-secondary">
+                            Cancelar edição
+                        </button>
+                    </div>
+
+                </form>
+            </section>
+
+            <section class="products-panel">
+                <div class="panel-header">
+                    <h2>Produtos cadastrados</h2>
+                    <input type="text" id="searchProduct" placeholder="Pesquisar produto...">
+                </div>
+
+                <div class="products-list" id="productsList"></div>
+            </section>
+
+        </section>
+
+    </main>
+    <script src="./js/admin-auth.js"></script>
+    <script src="./js/admin.js"></script>
+
+</body>
+</html>
