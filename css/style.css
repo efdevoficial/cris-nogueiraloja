@@ -44,59 +44,76 @@ img {
     display: block;
 }
 
-/* HEADER */
 
-.header {
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 999;
-    background: rgba(248, 245, 242, 0.85);
-    backdrop-filter: blur(18px);
-    border-bottom: 1px solid var(--border);
-}
+/* ==========================================
+   NAVBAR BOOTSTRAP
+========================================== */
 
 .navbar {
-    width: min(1200px, 92%);
-    height: 86px;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    background: rgba(248, 245, 242, 0.96) !important;
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 4px 20px rgba(95, 60, 58, 0.08);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    z-index: 1050;
 }
 
-.logo-area {
-    display: flex;
+.navbar .container {
+    min-height: 86px;
+}
+
+.navbar-brand {
+    display: inline-flex;
     align-items: center;
     gap: 12px;
+    margin: 0;
+    color: var(--rose-dark);
     font-family: "Playfair Display", serif;
     font-size: 26px;
     font-weight: 700;
-    color: var(--rose-dark);
 }
 
-.logo-area img {
+.navbar-brand:hover {
+    color: var(--rose);
+}
+
+.navbar-brand img {
     width: 54px;
     height: 54px;
     border-radius: 50%;
     object-fit: cover;
 }
 
-.nav-links {
-    display: flex;
+.navbar-nav {
     align-items: center;
-    gap: 30px;
+    gap: 12px;
 }
 
-.nav-links a {
+.navbar-nav .nav-link {
+    position: relative;
+    padding: 10px 8px !important;
     color: var(--muted);
     font-weight: 600;
     transition: var(--transition);
 }
 
-.nav-links a:hover {
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus,
+.navbar-nav .nav-link.active {
     color: var(--rose);
+}
+
+.navbar-toggler {
+    width: 52px;
+    height: 52px;
+    padding: 10px;
+    border: 2px solid var(--rose-dark);
+    border-radius: 12px;
+    box-shadow: none !important;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='%235f3c3a' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
 .btn-nav,
@@ -121,20 +138,37 @@ img {
 
 .btn-nav:hover,
 .btn-primary:hover {
-    transform: translateY(-4px);
     background: var(--rose-dark);
+    color: var(--white);
+    transform: translateY(-4px);
 }
 
 .btn-secondary {
     border: 1px solid var(--border);
-    color: var(--rose-dark);
     background: rgba(255, 255, 255, 0.45);
+    color: var(--rose-dark);
 }
 
 .btn-secondary:hover {
-    transform: translateY(-4px);
-    border-color: var(--rose);
     background: var(--white);
+    border-color: var(--rose);
+    color: var(--rose-dark);
+    transform: translateY(-4px);
+}
+
+.btn-admin {
+    padding: 12px 20px;
+    border: 1px solid var(--rose);
+    border-radius: 999px;
+    color: var(--rose);
+    font-weight: 700;
+    transition: var(--transition);
+}
+
+.btn-admin:hover {
+    background: var(--rose);
+    color: var(--white);
+    transform: translateY(-3px);
 }
 
 /* HERO */
@@ -417,55 +451,8 @@ footer small {
     }
 }
 
-/* RESPONSIVO */
 
-@media (max-width: 1000px) {
-    .hero,
-    .contact {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .hero-content {
-        margin: auto;
-    }
-
-    .hero-buttons {
-        justify-content: center;
-    }
-
-    .benefits,
-    .category-grid,
-    .products-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .nav-links {
-        display: none;
-    }
-}
-
-@media (max-width: 600px) {
-    .navbar {
-        height: 76px;
-    }
-
-    .logo-area span {
-        display: none;
-    }
-
-    .hero {
-        padding-top: 120px;
-    }
-
-    .hero-card {
-        padding: 25px;
-    }
-
-    .contact {
-        grid-template-columns: 1fr;
-    }
-}
+/* DETALHES DOS PRODUTOS */
 
 .product-image img {
     width: 100%;
@@ -509,62 +496,21 @@ footer small {
     margin-bottom: 10px;
 }
 
-.btn-admin{
-    padding:12px 20px;
-    border-radius:999px;
-    border:1px solid var(--rose);
-    color:var(--rose);
-    font-weight:700;
-    transition:.3s;
-}
-
-.btn-admin:hover{
-    background:var(--rose);
-    color:#fff;
-    transform:translateY(-3px);
-}
 
 /* ==========================================
-   RESPONSIVIDADE — CRIS NOGUEIRA
+   RESPONSIVIDADE
 ========================================== */
 
-.menu-toggle {
-    display: none;
-    width: 46px;
-    height: 46px;
-    border: none;
-    border-radius: 50%;
-    background: var(--rose);
-    color: #fff;
-    font-size: 24px;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    position: relative;
-    z-index: 1002;
-}
-
-/* NOTEBOOKS E TABLETS */
-
 @media (max-width: 1100px) {
-    .navbar {
-        width: min(94%, 1100px);
-    }
-
     .hero {
         grid-template-columns: 1fr;
-        text-align: center;
         gap: 45px;
-        padding-top: 135px;
+        padding-top: 130px;
+        text-align: center;
     }
 
     .hero-content {
         margin: 0 auto;
-    }
-
-    .hero p {
-        margin-left: auto;
-        margin-right: auto;
     }
 
     .hero-buttons {
@@ -579,7 +525,7 @@ footer small {
     .benefits,
     .category-grid,
     .products-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .contact {
@@ -588,100 +534,67 @@ footer small {
     }
 
     .contact-card {
+        width: 100%;
         max-width: 520px;
         margin: 0 auto;
-        width: 100%;
     }
 }
 
-/* MENU MOBILE */
-
-@media (max-width: 900px) {
-    .header {
-        position: fixed;
+@media (max-width: 991.98px) {
+    .navbar .container {
+        min-height: 76px;
     }
 
-    .navbar {
-        height: 78px;
-        position: relative;
-    }
-
-    .menu-toggle {
-        display: flex;
-    }
-
-    .nav-links {
-        position: absolute;
-        top: 88px;
-        left: 0;
-        right: 0;
-
-        display: none;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 8px;
-
-        padding: 20px;
-        background: rgba(255, 255, 255, .98);
+    .navbar-collapse {
+        margin-top: 12px;
+        padding: 18px;
+        background: var(--bg);
         border: 1px solid var(--border);
-        border-radius: 22px;
-        box-shadow: var(--shadow);
-        z-index: 1001;
+        border-radius: 0 0 18px 18px;
+        box-shadow: 0 18px 35px rgba(95, 60, 58, 0.14);
     }
 
-    .nav-links.show {
-        display: flex;
+    .navbar-nav {
+        align-items: stretch;
+        gap: 6px;
     }
 
-    .nav-links li {
-        width: 100%;
+    .navbar-nav .nav-link {
+        padding: 12px 14px !important;
+        border-radius: 12px;
+        text-align: left;
     }
 
-    .nav-links a {
-        display: block;
-        width: 100%;
-        padding: 14px 16px;
-        border-radius: 14px;
-        text-align: center;
-    }
-
-    .nav-links a:hover {
+    .navbar-nav .nav-link:hover {
         background: var(--bg-soft);
     }
 
-    .btn-admin {
-        border: 1px solid var(--rose);
-    }
-
-    .btn-nav {
-        display: none;
+    .btn-nav,
+    .btn-admin,
+    .btn-loja {
+        width: 100%;
+        margin-top: 8px;
     }
 }
-
-/* CELULARES */
 
 @media (max-width: 700px) {
     section {
         padding: 75px 22px;
     }
 
-    .navbar {
-        width: calc(100% - 28px);
+    .navbar-brand {
+        gap: 9px;
+        font-size: 21px;
     }
 
-    .logo-area img {
+    .navbar-brand img {
         width: 46px;
         height: 46px;
     }
 
-    .logo-area span {
-        display: block;
-        font-size: 20px;
-    }
-
     .hero {
         min-height: auto;
-        padding: 125px 22px 70px;
+        padding: 115px 22px 70px;
     }
 
     .hero h1 {
@@ -743,8 +656,8 @@ footer small {
     }
 
     .instagram {
-        padding-left: 24px;
         padding-right: 24px;
+        padding-left: 24px;
     }
 
     footer {
@@ -752,15 +665,18 @@ footer small {
     }
 }
 
-/* CELULARES PEQUENOS */
-
 @media (max-width: 480px) {
-    .logo-area span {
-        display: none;
+    .navbar-brand span {
+        font-size: 19px;
+    }
+
+    .navbar-toggler {
+        width: 46px;
+        height: 46px;
     }
 
     .hero {
-        padding-top: 115px;
+        padding-top: 105px;
     }
 
     .hero h1 {
@@ -768,8 +684,8 @@ footer small {
     }
 
     .tag {
-        font-size: 12px;
         padding: 9px 14px;
+        font-size: 12px;
     }
 
     .hero-card img {
@@ -786,67 +702,163 @@ footer small {
         height: 230px;
     }
 
-    .nav-links {
-        top: 82px;
+    .empty-products {
+        padding: 35px 20px;
     }
 }
 
-.navbar-brand {
-    display: flex;
+
+/* ==========================================
+   TEMA CLARO E ESCURO
+========================================== */
+
+:root {
+    color-scheme: light;
+}
+
+html[data-theme="dark"] {
+    color-scheme: dark;
+
+    --bg: #1b1514;
+    --bg-soft: #2a201e;
+    --rose: #d08a84;
+    --rose-dark: #f0c8c3;
+    --gold: #d9b978;
+    --white: #241b1a;
+    --text: #f5e9e6;
+    --muted: #c8aaa5;
+    --border: rgba(240, 200, 195, 0.16);
+    --shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+}
+
+body,
+.navbar,
+.navbar-collapse,
+.about,
+.products,
+.categories,
+.contact,
+.product-card,
+.category-card,
+.contact-card,
+.benefits article,
+.empty-products,
+.btn-secondary {
+    transition:
+        background-color var(--transition),
+        color var(--transition),
+        border-color var(--transition),
+        box-shadow var(--transition);
+}
+
+html[data-theme="dark"] body {
+    background: var(--bg);
+    color: var(--text);
+}
+
+html[data-theme="dark"] .navbar {
+    background: rgba(27, 21, 20, 0.94) !important;
+    border-bottom-color: var(--border);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.28);
+}
+
+html[data-theme="dark"] .navbar-brand,
+html[data-theme="dark"] .navbar-nav .nav-link {
+    color: var(--text);
+}
+
+html[data-theme="dark"] .navbar-nav .nav-link:hover,
+html[data-theme="dark"] .navbar-nav .nav-link:focus,
+html[data-theme="dark"] .navbar-nav .nav-link.active {
+    color: var(--rose);
+}
+
+html[data-theme="dark"] .navbar-toggler {
+    border-color: var(--rose);
+}
+
+html[data-theme="dark"] .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='%23f0c8c3' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+html[data-theme="dark"] .hero {
+    background:
+        radial-gradient(circle at top left, rgba(217, 185, 120, 0.11), transparent 32%),
+        radial-gradient(circle at bottom right, rgba(208, 138, 132, 0.12), transparent 30%);
+}
+
+html[data-theme="dark"] .about,
+html[data-theme="dark"] .products {
+    background: #211918;
+}
+
+html[data-theme="dark"] .categories,
+html[data-theme="dark"] .contact {
+    background: var(--bg-soft);
+}
+
+html[data-theme="dark"] .benefits article,
+html[data-theme="dark"] .category-card,
+html[data-theme="dark"] .product-card,
+html[data-theme="dark"] .contact-card,
+html[data-theme="dark"] .empty-products {
+    background: var(--white);
+    border-color: var(--border);
+}
+
+html[data-theme="dark"] .product-image {
+    background: linear-gradient(135deg, #342725, #211918);
+}
+
+html[data-theme="dark"] .btn-secondary {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text);
+}
+
+html[data-theme="dark"] .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+html[data-theme="dark"] footer {
+    background: #120e0d;
+}
+
+.theme-toggle {
+    width: 46px;
+    height: 46px;
+    margin-left: 10px;
+    display: inline-flex;
     align-items: center;
-    gap: 12px;
-    text-decoration: none;
-}
-
-.navbar-brand img {
-    width: 55px;
-    height: 55px;
+    justify-content: center;
+    flex: 0 0 auto;
+    border: 1px solid var(--border);
     border-radius: 50%;
-    object-fit: cover;
+    background: var(--bg-soft);
+    color: var(--rose-dark);
+    font-size: 20px;
+    cursor: pointer;
+    transition: var(--transition);
 }
 
-.navbar-brand span {
-    font-size: 28px;
-    font-weight: 700;
-    color: #222;
-    font-family: "Playfair Display", serif;
+.theme-toggle:hover {
+    background: var(--rose);
+    color: var(--white);
+    transform: translateY(-2px);
 }
 
-/* Navbar */
-
-.navbar {
-    background: #fff;
-    box-shadow: 0 4px 20px rgba(0,0,0,.08);
+.theme-toggle:focus-visible {
+    outline: 3px solid rgba(154, 94, 90, 0.28);
+    outline-offset: 3px;
 }
-
-/* Menu Mobile */
 
 @media (max-width: 991.98px) {
-
-    .navbar-collapse {
-        margin-top: 15px;
-        padding: 20px;
-        background: #ffffff;
-        border-radius: 18px;
-        box-shadow: 0 12px 30px rgba(0,0,0,.12);
+    html[data-theme="dark"] .navbar-collapse {
+        background: var(--bg);
     }
 
-    .navbar-nav {
-        gap: 8px;
-    }
-
-    .navbar-nav .nav-link {
-        padding: 12px 16px;
-        border-radius: 12px;
-    }
-
-    .navbar-nav .nav-link:hover {
-        background: #f8f4f2;
-    }
-
-    .btn-loja {
-        margin-top: 15px;
+    .theme-toggle {
+        margin: 10px 0 0;
         width: 100%;
+        border-radius: 14px;
     }
-
 }
