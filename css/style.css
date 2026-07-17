@@ -524,10 +524,329 @@ footer small {
     transform:translateY(-3px);
 }
 
-/*Imagem apresentação: */
+/* ==========================================
+   RESPONSIVIDADE — CRIS NOGUEIRA
+========================================== */
 
-.img-card div{
-      font-size: 44px;
-    margin-bottom: 18px;
-    height: 140px;
+.menu-toggle {
+    display: none;
+    width: 46px;
+    height: 46px;
+    border: none;
+    border-radius: 50%;
+    background: var(--rose);
+    color: #fff;
+    font-size: 24px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    z-index: 1002;
+}
+
+/* NOTEBOOKS E TABLETS */
+
+@media (max-width: 1100px) {
+    .navbar {
+        width: min(94%, 1100px);
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 45px;
+        padding-top: 135px;
+    }
+
+    .hero-content {
+        margin: 0 auto;
+    }
+
+    .hero p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-card {
+        width: min(520px, 100%);
+        margin: 0 auto;
+    }
+
+    .benefits,
+    .category-grid,
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .contact-card {
+        max-width: 520px;
+        margin: 0 auto;
+        width: 100%;
+    }
+}
+
+/* MENU MOBILE */
+
+@media (max-width: 900px) {
+    .header {
+        position: fixed;
+    }
+
+    .navbar {
+        height: 78px;
+        position: relative;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 88px;
+        left: 0;
+        right: 0;
+
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+
+        padding: 20px;
+        background: rgba(255, 255, 255, .98);
+        border: 1px solid var(--border);
+        border-radius: 22px;
+        box-shadow: var(--shadow);
+        z-index: 1001;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links a {
+        display: block;
+        width: 100%;
+        padding: 14px 16px;
+        border-radius: 14px;
+        text-align: center;
+    }
+
+    .nav-links a:hover {
+        background: var(--bg-soft);
+    }
+
+    .btn-admin {
+        border: 1px solid var(--rose);
+    }
+
+    .btn-nav {
+        display: none;
+    }
+}
+
+/* CELULARES */
+
+@media (max-width: 700px) {
+    section {
+        padding: 75px 22px;
+    }
+
+    .navbar {
+        width: calc(100% - 28px);
+    }
+
+    .logo-area img {
+        width: 46px;
+        height: 46px;
+    }
+
+    .logo-area span {
+        display: block;
+        font-size: 20px;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 125px 22px 70px;
+    }
+
+    .hero h1 {
+        font-size: 44px;
+        line-height: 1.08;
+    }
+
+    .hero p {
+        font-size: 16px;
+        line-height: 1.75;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-buttons a {
+        width: 100%;
+    }
+
+    .hero-card {
+        padding: 26px;
+    }
+
+    .hero-card img {
+        width: 260px;
+    }
+
+    .section-title {
+        margin-bottom: 38px;
+    }
+
+    .section-title h2,
+    .contact h2,
+    .instagram h2 {
+        font-size: 38px;
+    }
+
+    .benefits,
+    .category-grid,
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .benefits article,
+    .category-card,
+    .product-card,
+    .contact-card {
+        padding: 25px;
+    }
+
+    .product-image {
+        height: 280px;
+    }
+
+    .product-card .btn-primary {
+        width: 100%;
+    }
+
+    .instagram {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    footer {
+        padding: 45px 22px;
+    }
+}
+
+/* CELULARES PEQUENOS */
+
+@media (max-width: 480px) {
+    .logo-area span {
+        display: none;
+    }
+
+    .hero {
+        padding-top: 115px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .tag {
+        font-size: 12px;
+        padding: 9px 14px;
+    }
+
+    .hero-card img {
+        width: 220px;
+    }
+
+    .section-title h2,
+    .contact h2,
+    .instagram h2 {
+        font-size: 32px;
+    }
+
+    .product-image {
+        height: 230px;
+    }
+
+    .nav-links {
+        top: 82px;
+    }
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.navbar-brand img {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.navbar-brand span {
+    font-size: 28px;
+    font-weight: 700;
+    color: #222;
+    font-family: "Playfair Display", serif;
+}
+
+/* Navbar */
+
+.navbar {
+    background: #fff;
+    box-shadow: 0 4px 20px rgba(0,0,0,.08);
+}
+
+/* Menu Mobile */
+
+@media (max-width: 991.98px) {
+
+    .navbar-collapse {
+        margin-top: 15px;
+        padding: 20px;
+        background: #ffffff;
+        border-radius: 18px;
+        box-shadow: 0 12px 30px rgba(0,0,0,.12);
+    }
+
+    .navbar-nav {
+        gap: 8px;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 12px 16px;
+        border-radius: 12px;
+    }
+
+    .navbar-nav .nav-link:hover {
+        background: #f8f4f2;
+    }
+
+    .btn-loja {
+        margin-top: 15px;
+        width: 100%;
+    }
+
 }
