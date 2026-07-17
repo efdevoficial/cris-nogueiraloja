@@ -191,16 +191,12 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(145deg, #fff, var(--bg-soft));
-    border: 1px solid var(--border);
-    border-radius: 50%;
     padding: 45px;
-    box-shadow: var(--shadow);
     animation: float 4s ease-in-out infinite;
 }
 
 .hero-card img {
-    width: min(360px, 100%);
+    width: min(600px, 100%);
     border-radius: 50%;
 }
 
@@ -297,7 +293,7 @@ section {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 26px;
-    width: min(1150px, 100%);
+    width: min(2000px, 100%);
     margin: auto;
 }
 
@@ -307,8 +303,8 @@ section {
 }
 
 .category-card div {
-    font-size: 44px;
-    margin-bottom: 18px;
+    font-size: 100px;
+    margin-bottom: 20px;
 }
 
 /* PRODUCTS */
@@ -526,4 +522,12 @@ footer small {
     background:var(--rose);
     color:#fff;
     transform:translateY(-3px);
+}
+
+/*Imagem apresentação: */
+
+.img-card div{
+      font-size: 44px;
+    margin-bottom: 18px;
+    height: 140px;
 }
